@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'PingFang TC'}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.s1 {font: 12.0px 'PingFang TC'}
+    span.s2 {font: 12.0px 'Apple Color Emoji'}
+    span.s3 {font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;<span class="s1">藍天風箏</span> · <span class="s1">修辭花園</span> · <span class="s1">合併題庫</span>&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Segoe UI', '<span class="s1">微軟正黑體</span>', 'Helvetica', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(145deg, #7ec8ff 0%, #b5e4ff 100%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow-x: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: filter 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body.focus-mode .cloud,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body.focus-mode .sun,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body.focus-mode .kite:not(.centered) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>filter: blur(4px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: filter 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.8);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 1000px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 15px 30px rgba(255,255,255,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>filter: blur(2px);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud1 { width: 180px; height: 70px; top: 10%; left: 5%; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud1::before, .cloud1::after {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: inherit;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: inherit;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud1::before { width: 80px; height: 80px; top: -40px; left: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud1::after { width: 100px; height: 100px; top: -50px; left: 70px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud2 { width: 220px; height: 80px; bottom: 15%; right: 8%; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud2::before, .cloud2::after {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: inherit;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: inherit;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud2::before { width: 100px; height: 100px; top: -50px; left: 30px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud2::after { width: 120px; height: 120px; top: -60px; left: 100px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud3 { width: 150px; height: 60px; top: 40%; left: 20%; opacity: 0.7; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud3::before, .cloud3::after {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: inherit;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: inherit;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud3::before { width: 70px; height: 70px; top: -35px; left: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cloud3::after { width: 80px; height: 80px; top: -40px; left: 70px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sun {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 70px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 200;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>filter: drop-shadow(0 0 20px #ffd966);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: sunTwinkle 4s infinite alternate ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes sunTwinkle {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>0% { filter: drop-shadow(0 0 15px #ffbb33); transform: scale(1) rotate(0deg); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>100% { filter: drop-shadow(0 0 35px #ffee88); transform: scale(1.05) rotate(5deg); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.control-panel {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.7);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(8px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 90%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 15px 25px rgba(0, 50, 80, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid rgba(255,255,255,0.5);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.library-badge {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.6);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 25px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #05445e;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(4px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px dashed #0284c7;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.library-badge span {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #ffb703;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #023047;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 5px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sky {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 1100px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 550px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: visible;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 60px 60px 30px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 20px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 3px solid rgba(255,255,255,0.7);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite-container {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 20;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 90px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 110px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: filter 0.2s, left 0.3s ease-out, top 0.3s ease-out;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>filter: drop-shadow(0 8px 12px rgba(0,0,0,0.1));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: float 8s infinite ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform-origin: center center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 25;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite.stopped {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation-play-state: paused;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite.centered {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 90% !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 600px !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: auto !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-height: 85% !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.95);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(12px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 6px solid rgba(255, 255, 255, 0.95);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 40px 60px rgba(0, 30, 50, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 15px 15px 20px 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: none !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 50% !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 50% !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translate(-50%, -50%) !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: left 0.3s ease-out, top 0.3s ease-out;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 200;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>scrollbar-width: thin;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>scrollbar-color: #0284c7 #e0f2fe;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite.centered::-webkit-scrollbar {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite.centered::-webkit-scrollbar-track {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #e0f2fe;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite.centered::-webkit-scrollbar-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #0284c7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite.centered .animal-face {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 140px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 140px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 90%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 240, 200, 0.9);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 5px solid white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50% 50% 30% 30%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 15px 25px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 5px 0 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>aspect-ratio: 1/1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite.centered .explanation-bubble {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: static !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 250, 235, 0.9);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 3px solid white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 15px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #05445e;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 10px 20px rgba(0, 30, 40, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>word-break: break-word;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(4px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-shrink: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow-wrap: break-word;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite.centered .kite-line {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.animal-face {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 4rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255, 255, 255, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(2px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50% 50% 30% 30%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 3px solid white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 5px 0 #aec9e0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: rotate(2deg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 30;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kite-line {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateX(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 20;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.9;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.explanation-bubble {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.button-group {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 25px 0 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 30;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.action-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #ffe7b6;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 3.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 10px 0 #cb9e5b, 0 10px 25px #0277a0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: 0.08s linear;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 4px solid white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #2b4f6e;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f9e7b3;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: rotate(0deg);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.action-btn:active {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(7px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 3px 0 #cb9e5b, 0 8px 20px #0277a0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.action-btn:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff2cf;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.search-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes float {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>0% { transform: translate(0, 0) rotate(0deg); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>25% { transform: translate(15px, -25px) rotate(6deg); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>50% { transform: translate(-10px, -40px) rotate(-4deg); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>75% { transform: translate(8px, -20px) rotate(3deg); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>100% { transform: translate(0, 0) rotate(0deg); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.toast-msg {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #05445e;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #f0f9ff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.9;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 700px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>word-wrap: break-word;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 8px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: background 0.2s, color 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.figure-badge {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f5e56b;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #1e3c5c;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 5px 25px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 0 #b68b40;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #0369a1;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-shadow: 0 2px 3px white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="sun"&gt;<span class="s2">☀️</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cloud cloud1"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cloud cloud2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cloud cloud3"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="control-panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="library-badge"&gt;</p>
+<p class="p2"><span class="s3"><span class="Apple-converted-space">      </span></span><span class="s2">📚</span><span class="s3"> </span>修辭題庫<span class="s3"> · </span>合併大全（擬人／擬物／明喻／暗喻／反復／反語／呼告／反問／設問／疑問）</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span&gt;26 <span class="s1">個句子</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="sky"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="kite-container" id="kiteContainer"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="button-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="action-btn search-btn" id="searchBtn" title="<span class="s1">顯示目前句子的修辭手法</span>"&gt;<span class="s2">🔍</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="action-btn" id="resetBtn" title="<span class="s1">讓所有風箏繼續飄動</span>"&gt;<span class="s2">🌀</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="message" class="toast-msg"&gt;<span class="s2">🎏</span> <span class="s1">點擊風箏，抽出一個句子（共</span>26<span class="s1">題，不重複抽選）</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;<span class="s2">🌤️</span> <span class="s1">每個風箏都拖著白色的線</span> · <span class="s1">題目不重複抽選</span>&lt;/footer&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>(function() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const kiteContainer = document.getElementById('kiteContainer');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const resetBtn = document.getElementById('resetBtn');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const searchBtn = document.getElementById('searchBtn');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const messageDiv = document.getElementById('message');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const animals = ['<span class="s2">🐶</span>', '<span class="s2">🐱</span>', '<span class="s2">🐼</span>', '<span class="s2">🦊</span>', '<span class="s2">🐸</span>', '<span class="s2">🐨</span>', '<span class="s2">🐧</span>', '<span class="s2">🐰</span>', '<span class="s2">🦝</span>', '<span class="s2">🐥</span>'];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const KITE_COUNT = 8;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const questionBank = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">擬人</span>', sentence: '<span class="s1">頑皮的小雨滴在荷葉上盡情地跳舞。</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">擬物</span>', sentence: '<span class="s1">在教官嚴厲的注視下，他嚇得夾著尾巴逃跑了。</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">明喻</span>', sentence: '<span class="s1">運動員們如同離弦的箭，飛快地衝向終點。</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">暗喻</span>', sentence: '<span class="s1">香港是一顆明珠，光輝璀璨。</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">連續反復</span>', sentence: '<span class="s1">快跑！快跑！後面的追兵就要趕上來了。</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">反語</span>', sentence: '<span class="s1">你的動作可真快啊，讓我們足足等了半個小時！</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">反語</span>', sentence: '<span class="s1">我那時真是聰明得過份，總覺他說話不大漂亮，非自己插嘴不可。</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">呼告</span>', sentence: '<span class="s1">哥哥，你在國外一定要好好地照顧自己啊！</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">呼告</span>', sentence: '<span class="s1">大自然啊，你的創造力是如此的驚人！</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">呼告</span>', sentence: '<span class="s1">江河啊，請你把我的憂愁带走吧！</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">反問</span>', sentence: '<span class="s1">難道你不知道在課室裏是需要保持安靜的嗎？</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">反問</span>', sentence: '<span class="s1">難道你不知道沉迷網上遊戲是不健康的嗎？</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">設問</span>', sentence: '<span class="s1">學跆拳道有什麼好處？可以強身健體。</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{ figure: '<span class="s1">疑問</span>', sentence: '<span class="s1">這道題的正確解法是什麼？</span>' },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>];</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const TOTAL_QUESTIONS = questionBank.length;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let usedIndices = [];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let currentCenteredKite = null;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function getRandomUnusedQuestion() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (usedIndices.length &gt;= TOTAL_QUESTIONS) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>usedIndices = [];</p>
+<p class="p1"><span class="Apple-converted-space">          </span>showMessage('<span class="s2">🔄</span> <span class="s1">題庫已循環，重新開始抽題</span>', false);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const availableIndices = [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (let i = 0; i &lt; TOTAL_QUESTIONS; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (!usedIndices.includes(i)) availableIndices.push(i);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const randomIdx = availableIndices[Math.floor(Math.random() * availableIndices.length)];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>usedIndices.push(randomIdx);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return { ...questionBank[randomIdx], index: randomIdx };</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function showMessage(text, isError = false) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>messageDiv.innerHTML = text;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>messageDiv.style.background = isError ? '#9b1c1c' : '#05445e';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>messageDiv.style.color = '#f0f9ff';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function createKites() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>kiteContainer.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (let i = 0; i &lt; KITE_COUNT; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const kite = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.className = 'kite';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const left = 5 + Math.random() * 80;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const top = 5 + Math.random() * 70;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.style.left = left + '%';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.style.top = top + '%';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.dataset.originalLeft = left;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.dataset.originalTop = top;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const duration = 6 + Math.floor(Math.random() * 8);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.style.animationDuration = duration + 's';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.style.animationDelay = (Math.random() * 3) + 's';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const animalEmoji = animals[i % animals.length];</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.setAttribute('data-animal', animalEmoji);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const faceDiv = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>faceDiv.className = 'animal-face';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>faceDiv.textContent = animalEmoji;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const lineDiv = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>lineDiv.className = 'kite-line';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const bubble = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>bubble.className = 'explanation-bubble';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.appendChild(faceDiv);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.appendChild(lineDiv);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.appendChild(bubble);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kiteContainer.appendChild(kite);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function adjustFontSizeByLength(element, text) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!element) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>element.style.fontSize = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const len = text.length;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const minLen = 5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const maxLen = 80;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const minFont = 1.1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const maxFont = 2.6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const clampedLen = Math.min(maxLen, Math.max(minLen, len));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fontSize = maxFont - ((clampedLen - minLen) / (maxLen - minLen)) * (maxFont - minFont);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>element.style.fontSize = fontSize + 'rem';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function restoreKitePosition(kite) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!kite) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>kite.classList.remove('centered', 'stopped');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (kite.dataset.originalLeft &amp;&amp; kite.dataset.originalTop) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.style.left = kite.dataset.originalLeft + '%';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.style.top = kite.dataset.originalTop + '%';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const bubble = kite.querySelector('.explanation-bubble');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (bubble) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>bubble.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>bubble.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">          </span>bubble.style.fontSize = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>delete kite.dataset.currentFigure;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>delete kite.dataset.currentSentence;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function centerKite(kite) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (currentCenteredKite &amp;&amp; currentCenteredKite !== kite) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>restoreKitePosition(currentCenteredKite);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!kite.dataset.originalLeft) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const left = parseFloat(kite.style.left) || 50;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>const top = parseFloat(kite.style.top) || 50;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.dataset.originalLeft = left;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>kite.dataset.originalTop = top;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>kite.classList.add('centered', 'stopped');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const bubble = kite.querySelector('.explanation-bubble');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (bubble) bubble.style.display = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>currentCenteredKite = kite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.classList.add('focus-mode');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function resetAllKites() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const kites = document.querySelectorAll('.kite');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>kites.forEach(kite =&gt; restoreKitePosition(kite));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>currentCenteredKite = null;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.classList.remove('focus-mode');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>showMessage('<span class="s2">✨</span> <span class="s1">風箏恢復飄動，可繼續點擊抽取新句子</span>');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function showCurrentFigure() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!currentCenteredKite) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>showMessage('<span class="s2">❓</span> <span class="s1">沒有正在觀看的風箏，請先點擊一個風箏</span>', true);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const figure = currentCenteredKite.dataset.currentFigure;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const sentence = currentCenteredKite.dataset.currentSentence || '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!figure) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>showMessage('<span class="s2">⚠️</span> <span class="s1">這個風箏還沒有句子，請重新點擊</span>', true);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>messageDiv.innerHTML = `<span class="s2">🔍</span> <span class="s1">修辭手法：</span>&lt;span class="figure-badge"&gt;${figure}&lt;/span&gt;&lt;br&gt;&lt;span style="font-size:1rem;"&gt;<span class="s1">「</span>${sentence}<span class="s1">」</span>&lt;/span&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>messageDiv.style.background = '#1e5f7a';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>messageDiv.style.color = '#fef9e0';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function onKiteClick(e) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const kite = e.target.closest('.kite');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!kite) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const isSameKite = (currentCenteredKite === kite);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!isSameKite) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (currentCenteredKite) restoreKitePosition(currentCenteredKite);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>centerKite(kite);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (!kite.classList.contains('centered')) centerKite(kite);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const bubble = kite.querySelector('.explanation-bubble');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!bubble) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const { figure, sentence } = getRandomUnusedQuestion();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>bubble.innerHTML = sentence;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>adjustFontSizeByLength(bubble, sentence);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>kite.dataset.currentFigure = figure;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>kite.dataset.currentSentence = sentence;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>showMessage(`<span class="s2">✨</span> <span class="s1">句子已送達風箏。按</span><span class="s2">🔍</span><span class="s1">查看修辭</span>`, false);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>kiteContainer.addEventListener('click', onKiteClick);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>resetBtn.addEventListener('click', resetAllKites);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>searchBtn.addEventListener('click', showCurrentFigure);</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>createKites();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>showMessage(`<span class="s2">🎏</span> <span class="s1">點擊風箏抽取句子（共</span> ${TOTAL_QUESTIONS} <span class="s1">種修辭，不重複）</span>`);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>})();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
